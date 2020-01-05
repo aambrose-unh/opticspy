@@ -114,7 +114,8 @@ class Coefficient(object):
 			print("Z"+str(m)+":"+i)
 			m = m + 1
 
-	def zernikesurface(self, label = True, zlim=[], matrix = False):
+	def zernikesurface(self, label = True, title='Zernike Polynomials Surface', zlim=[], 
+				matrix = False, savefig = True):
 		"""
 		------------------------------------------------
 		zernikesurface(self, label_1 = True):
@@ -154,16 +155,25 @@ class Coefficient(object):
 
 		label_1 = self.listcoefficient()[0]+"P-V: "+str(p2v)+"\n"+"RMS: "+str(rms1)
 		if label == True:
-			__plt__.title('Zernike Polynomials Surface',fontsize=18)
+			__plt__.title(title,fontsize=18)
 			ax.text2D(0.02, 0.1, label_1, transform=ax.transAxes,fontsize=14)
 		else:
 			pass
-		__plt__.show()
+
+		if savefig == True:
+			__plt__.savefig(title + '.png', dpi=300, bbox_inches='tight') #'{}.png'.format(title)
+		else:
+			pass
+			__plt__.show()
+		
+		__plt__.show()		
 
 		if matrix == True:
 			return Z
 		else:
 			pass
+
+	
 	def zernikemap(self, label = True):
 		"""
 		------------------------------------------------
