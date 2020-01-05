@@ -115,7 +115,7 @@ class Coefficient(object):
 			m = m + 1
 
 	def zernikesurface(self, label = True, title='Zernike Polynomials Surface', zlim=[], 
-				matrix = False, savefig = True):
+				matrix = False, savefig = False):
 		"""
 		------------------------------------------------
 		zernikesurface(self, label_1 = True):
